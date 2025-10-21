@@ -21,7 +21,7 @@ except Error as e:
         )
 
         cursor = db.cursor()
-        cursor.execute("CREATE DATABASE alx_book_store")
+        cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
         print("Database 'alx_book_store' created successfully!")
 
         cursor.close
