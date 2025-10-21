@@ -1,5 +1,4 @@
 import mysql.connector
-from mysql.connector import Error
 try:
     db = mysql.connector.connect(
         host="localhost",
@@ -12,7 +11,7 @@ try:
         print("Database 'alx_book_store' already exists!")
         db.close()
 
-except Error as e:
+except mysql.connector.Error as e:
     if "Unknown database" in str(e):
         db = mysql.connector.connect(
             host="localhost",
